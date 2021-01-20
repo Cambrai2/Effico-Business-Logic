@@ -1,0 +1,25 @@
+<html>
+
+
+{header UI}
+<h1>Bookings</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Booking</th>
+    </tr>
+<?php include 'php/requests.php';
+
+$users = getUsers();
+
+foreach ($users as $user){
+    echo "<tr><a href='user.html/". $user["fullName"]. "'></a>
+        <td>". $user["id"]. "</td>
+        <td>". $user["fullName"]. "</td>
+        <td>". $user["lastBooking"]. "</td></a></tr>";
+}
+?>
+</table>
+
+</html>

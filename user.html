@@ -1,0 +1,28 @@
+<html>
+
+
+{header UI}
+<h1>Bookings</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Driver</th>
+        <th>vehiclePlate</th>
+        <th>Date</th>
+    </tr>
+<?php include 'php/requests.php';
+
+$user = $post->post_name;
+$bookings = getBookings();
+
+foreach ($bookings as $booking if ($booking["user"] == $user)){
+    echo "<tr>
+        <td>". $booking["id"]. "</td>
+        <td>". $booking["driver"]. "</td>
+        <td>". $booking["vehiclePlate"]. "</td>
+        <td>". $booking["date"]. "</td></tr>";
+}
+?>
+</table>
+
+</html>

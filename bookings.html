@@ -1,0 +1,29 @@
+<html>
+
+
+{header UI}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Driver</th>
+        <th>User</th>
+        <th>Vehicle Plate</th>
+        <th>Date</th>
+    </tr>
+<?php include 'php/requests.php';
+
+$bookings = getBookings();
+
+foreach ($bookings as $booking){
+    echo "<tr>
+        <td>". $booking["id"]. "</td>
+        <td><a href='driver.html/". $booking["driver"]. "'>". $booking["driver"]. "</a></td>
+        <td><a href='user.html/". $booking["user"]. "'>". $booking["user"]. "</a></td>
+        <td><a href='vehicle.html/". $booking["vehiclePlate"]. "'>". $booking["vehiclePlate"]. "</a></td>
+        <td>". $booking["date"]. "</td></tr>";
+}
+?>
+</table>
+
+</html>

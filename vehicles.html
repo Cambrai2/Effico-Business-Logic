@@ -1,0 +1,27 @@
+<html>
+
+
+{header UI}
+<h1>Vehicles</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>License Plate</th>
+        <th>License Requirement</th>
+        <th>Last Use</th>
+    </tr>
+<?php include 'php/requests.php';
+
+$vehicles = getVehicles();
+
+foreach ($vehicles as $vehicle){
+    echo "<tr><a href='vehicle.html/". $vehicle["licensePlate"]. "'>
+        <td>". $vehicle["id"]. "</td>
+        <td>". $vehicle["licensePlate"]. "</td>
+        <td>". $vehicle["licenseRequirement"]. "</td>
+        <td>". $vehicle["lastBooking"]. "</td></a></tr>";
+}
+?>
+</table>
+
+</html>

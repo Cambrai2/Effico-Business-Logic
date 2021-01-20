@@ -1,0 +1,27 @@
+<html>
+
+
+{header UI}
+<h1>Drivers</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Current Vehicle</th>
+        <th>Licenses</th>
+    </tr>
+<?php include 'php/requests.php';
+
+$drivers = getDrivers();
+
+foreach ($drivers as $driver){
+    echo "<tr><a href='driver.html/". $driver["fullName"]. "'>
+        <td>". $driver["id"]. "</td>
+        <td>". $driver["fullName"]. "</td>
+        <td>". $driver["currentVehicle"]. "</td>
+        <td>". $driver["licenses"]. "</td></a></tr>";
+}
+?>
+</table>
+
+</html>
